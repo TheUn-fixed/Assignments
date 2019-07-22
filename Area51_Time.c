@@ -29,10 +29,7 @@ void input()
 void timecalc()
 {
 	
-	hours = (time_input / 100) - 12;
-	minutes = (time_input % 100);
-	
-	if (time_input >= 0 && time_input <=1259)
+	if (time_input >= 100 && time_input <=1259)
 	{
 		
 		hours = (time_input / 100);
@@ -40,6 +37,21 @@ void timecalc()
 		
 	}
 	
+	else if (time_input >= 0 && time_input < 100)
+	{
+		
+		hours = (time_input / 100)+ 12;
+		minutes = (time_input % 100);
+		
+	}
+	
+	else
+	{
+		
+		hours = (time_input / 100) - 12;
+		minutes = (time_input % 100);
+		
+	}
 	
 }
 
